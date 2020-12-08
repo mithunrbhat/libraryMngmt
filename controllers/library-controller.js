@@ -1,4 +1,5 @@
 const url = require('url');
+const sugerDisplay = require('../utils/sugerCoatJson');
 
 const fileRW = require('../utils/fileReadWrite')
 
@@ -7,7 +8,15 @@ async function getAll(req, res) {
         let jsonData = await fileRW.readFromFile();
         dataObj = JSON.parse(jsonData);
         let urlArr = req.url.split('/', 2);
-        res.json(dataObj[urlArr[1]]);  
+        switch(urlArr[1]) {
+            case 'book':
+                let result = sugerDisplay.displayBook(dataObj, urlArr[1]);
+                res.json(result);
+                break;
+            case 'author':
+            case 'publisher': res.json(dataObj[urlArr[1]]);
+
+        }
     } catch (error) {
         console.error(error);
     }
@@ -37,7 +46,7 @@ async function addItem(req, res) {
         dataObj = JSON.parse(jsonData);
         let urlArr = req.url.split('/', 2);
         dataObj[urlArr[1]].push(req.body);
-        await fileRW.writeIntoFile(dataObj, res, urlArr[1]);
+        await fileRW.writeIntoFile(dataObj, req, res, urlArr[1]);
     } catch (error) {
         console.error(error);
     }
@@ -51,7 +60,7 @@ async function deleteItem(req, res) {
         dataObj[urlArr[1]] = dataObj[urlArr[1]].filter((element) => {
             return parseInt(element.id) !== parseInt(req.params.id)
         });
-        await fileRW.writeIntoFile(dataObj, res, urlArr[1]);
+        await fileRW.writeIntoFile(dataObj, req, res, urlArr[1]);
     } catch (error) {
         console.error(error);
     }
