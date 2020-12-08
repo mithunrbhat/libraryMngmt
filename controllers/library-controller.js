@@ -10,7 +10,7 @@ async function getAll(req, res) {
         let urlArr = req.url.split('/', 2);
         switch(urlArr[1]) {
             case 'book':
-                let result = sugerDisplay.displayBook(dataObj, urlArr[1]);
+                let result = sugerDisplay.displayBooks(dataObj, urlArr[1]);
                 res.json(result);
                 break;
             case 'author':
@@ -31,7 +31,14 @@ async function getById(req, res) {
         dataObj[urlArr[1]].forEach(element => {
             if(parseInt(element.id) === parseInt(req.params.id)) {
                 found = true;
-                res.json(element);
+                switch(urlArr[1]) {
+                    case 'book':
+                        let result = sugerDisplay.displayBook(element);
+                        res.json(result);
+                        break;
+                    case 'author':
+                    case 'publisher': res.json(element);
+                }
             }
         });  
         if(!found) {res.json({message: `${urlArr[1]} with the ID: ${req.params.id} is not found`})};
