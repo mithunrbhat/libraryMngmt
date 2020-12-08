@@ -11,9 +11,9 @@ router.get('/publisher/:id', libraryController.getById);
 router.post('/author', libraryController.addItem);
 router.post('/publisher', libraryController.addItem);
 router.post('/book', libraryController.addItem);
-router.delete('/author/:id', libraryController.getAll);
-router.delete('/publisher/:id', libraryController.getAll);
-router.delete('/book/:id', libraryController.getAll);
+router.delete('/author/:id', libraryController.deleteItem);
+router.delete('/publisher/:id', libraryController.deleteItem);
+router.delete('/book/:id', libraryController.deleteItem);
 
 
 

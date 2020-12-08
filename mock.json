@@ -19,16 +19,6 @@
       "publishedDate": "29/02/2000",
       "authorId": 2,
       "publisherId": 1
-    },
-    {
-      "id": 3,
-      "title": "platipus",
-      "totalPages": 250,
-      "rating": "9/10",
-      "isbn": 112,
-      "publishedDate": "11/02/2012",
-      "authorId": 2,
-      "publisherId": 3
     }
   ],
   "author": [
@@ -52,13 +42,6 @@
       "email": "cobra@bites.com",
       "contact": "9900841845",
       "established": 1970
-    },
-    {
-      "id": 2,
-      "name": "mamba",
-      "email": "noodle@danger.com",
-      "contact": "9988841845",
-      "established": 1974
     }
   ]
 }

@@ -43,5 +43,19 @@ async function addItem(req, res) {
     }
 }
 
+async function deleteItem(req, res) {
+    try {
+        let jsonData = await fileRW.readFromFile();
+        dataObj = JSON.parse(jsonData);
+        let urlArr = req.url.split('/', 2);
+        dataObj[urlArr[1]] = dataObj[urlArr[1]].filter((element) => {
+            return parseInt(element.id) !== parseInt(req.params.id)
+        });
+        await fileRW.writeIntoFile(dataObj, res, urlArr[1]);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-module.exports = {getAll, getById, addItem}
+
+module.exports = {getAll, getById, addItem, deleteItem}
