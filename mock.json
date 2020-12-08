@@ -1,41 +1,64 @@
 {
-    "book": [
-        {
-            "id": 1,
-            "title": "salamander",
-            "totalPages": 500,
-            "rating": "8/10",
-            "isbn": 720,
-            "publishedDate": "21/05/1990",
-            "authorId": 1,
-            "publisherId": 1
-        },
-        {
-            "id": 2,
-            "title": "monitor",
-            "totalPages": 501,
-            "rating": "5/10",
-            "isbn": 650,
-            "publishedDate": "29/02/2000",
-            "authorId": 2,
-            "publisherId": 1
-        }
-    ],
-    "author": [
-        {
-            "id": 1,
-            "name": "Dave Batista",
-            "email": "smack@down.com",
-            "dob": "11/01/1947"
-        }
-    ],
-    "publisher": [
-        {
-                "id": 1,
-                "name": "cobra",
-                "email": "cobra@bites.com",
-                "contact": "9900841845",
-                "established": 1970
-        }
-    ]
+  "book": [
+    {
+      "id": 1,
+      "title": "salamander",
+      "totalPages": 500,
+      "rating": "8/10",
+      "isbn": 720,
+      "publishedDate": "21/05/1990",
+      "authorId": 1,
+      "publisherId": 1
+    },
+    {
+      "id": 2,
+      "title": "monitor",
+      "totalPages": 501,
+      "rating": "5/10",
+      "isbn": 650,
+      "publishedDate": "29/02/2000",
+      "authorId": 2,
+      "publisherId": 1
+    },
+    {
+      "id": 3,
+      "title": "platipus",
+      "totalPages": 250,
+      "rating": "9/10",
+      "isbn": 112,
+      "publishedDate": "11/02/2012",
+      "authorId": 2,
+      "publisherId": 3
+    }
+  ],
+  "author": [
+    {
+      "id": 1,
+      "name": "Dave Batista",
+      "email": "smack@down.com",
+      "dob": "11/01/1947"
+    },
+    {
+      "id": 2,
+      "name": "David Buccher",
+      "email": "archem@assilum.com",
+      "dob": "02/01/1998"
+    }
+  ],
+  "publisher": [
+    {
+      "id": 1,
+      "name": "cobra",
+      "email": "cobra@bites.com",
+      "contact": "9900841845",
+      "established": 1970
+    },
+    {
+      "id": 2,
+      "name": "mamba",
+      "email": "noodle@danger.com",
+      "contact": "9988841845",
+      "established": 1974
+    }
+  ]
 }
