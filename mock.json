@@ -21,34 +21,34 @@
       "publisherId": 1
     },
     {
-        "id": 3,
-        "title": "salamander",
-        "totalPages": 500,
-        "rating": "8/10",
-        "isbn": 720,
-        "publishedDate": "21/05/1990",
-        "authorId": 3,
-        "publisherId": 3
+      "id": 3,
+      "title": "salamander",
+      "totalPages": 500,
+      "rating": "8/10",
+      "isbn": 720,
+      "publishedDate": "21/05/1990",
+      "authorId": 3,
+      "publisherId": 3
     },
     {
-        "id": 4,
-        "title": "salamander",
-        "totalPages": 500,
-        "rating": "8/10",
-        "isbn": 720,
-        "publishedDate": "21/05/1990",
-        "authorId": 4,
-        "publisherId": 2
+      "id": 4,
+      "title": "salamander",
+      "totalPages": 500,
+      "rating": "8/10",
+      "isbn": 720,
+      "publishedDate": "21/05/1990",
+      "authorId": 4,
+      "publisherId": 2
     },
     {
-        "id": 5,
-        "title": "monitor",
-        "totalPages": 501,
-        "rating": "5/10",
-        "isbn": 650,
-        "publishedDate": "29/02/2000",
-        "authorId": 4,
-        "publisherId": 3
+      "id": 5,
+      "title": "monitor",
+      "totalPages": 501,
+      "rating": "5/10",
+      "isbn": 650,
+      "publishedDate": "29/02/2000",
+      "authorId": 4,
+      "publisherId": 3
     }
   ],
   "author": [
@@ -65,16 +65,16 @@
       "dob": "02/01/1998"
     },
     {
-        "id": 3,
-        "name": "Dave Batista",
-        "email": "smack@down.com",
-        "dob": "11/01/1947"
+      "id": 3,
+      "name": "Dave Batista",
+      "email": "smack@down.com",
+      "dob": "11/01/1947"
     },
     {
-        "id": 4,
-        "name": "David Buccher",
-        "email": "archem@assilum.com",
-        "dob": "02/01/1998"
+      "id": 4,
+      "name": "David Buccher",
+      "email": "archem@assilum.com",
+      "dob": "02/01/1998"
     }
   ],
   "publisher": [
@@ -86,18 +86,18 @@
       "established": 1970
     },
     {
-        "id": 2,
-        "name": "cobra",
-        "email": "cobra@bites.com",
-        "contact": "9900841845",
-        "established": 1970
+      "id": 2,
+      "name": "cobra",
+      "email": "cobra@bites.com",
+      "contact": "9900841845",
+      "established": 1970
     },
     {
-        "id": 3,
-        "name": "cobra",
-        "email": "cobra@bites.com",
-        "contact": "9900841845",
-        "established": 1970
+      "id": 3,
+      "name": "cobra",
+      "email": "cobra@bites.com",
+      "contact": "9900841845",
+      "established": 1970
     }
   ]
 }

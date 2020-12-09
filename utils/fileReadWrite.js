@@ -16,8 +16,8 @@ function writeIntoFile(writeFilePath, dataToWrite, req, res, item) {
             if(err) rejects(err);
             else {
                 let msg = '';
-                if(req.method == 'POST') {
-                    if(item === 'undefined') msg = 'Registered successfully';
+                if(req.method === 'POST') {
+                    if(item === undefined) msg = 'Registered successfully';
                     else msg = `${item} is added to the library`;
                 }
                 else if(req.method == 'DELETE') msg = `${item} with ID: ${req.params.id} is deleted successfully `

@@ -6,6 +6,11 @@ const router = express.Router();
 const libraryController = require('./controllers/library-controller');
 const userController = require('./controllers/user-controller');
 
+router.use(function timeLog(req, res, next) {
+    console.log(`Time: ${Date.now()} : Requests ${req.url}`);
+    next();
+});
+
 function verifyToken(req, res, next) {
     const bearerHeader = req.headers['token'];
     if (typeof bearerHeader !== 'undefined') {
@@ -17,11 +22,11 @@ function verifyToken(req, res, next) {
                 req.authData = authData;
                 next();
             } else {
-                res.status(200).send({status: statusCodes.TOKEN_EXPIRER});
+                res.status(200).send({status: statusCodes.TOKEN_EXPIRED});
             }
         });
     } else {
-        res.sendStatus(500);
+        res.status(500).send({message: 'Please login / register to add, delete the data'});
     }
 }
 

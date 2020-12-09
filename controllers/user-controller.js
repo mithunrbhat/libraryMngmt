@@ -16,7 +16,7 @@ const filePath = 'mockUser.json';
 async function signUp(req, res) {
     try {
         dataObj.users.push(req.body);
-        await fileRW.writeIntoFile(filePath, dataObj)
+        await fileRW.writeIntoFile(filePath, dataObj, req, res)
     } catch (err) {
         res.status(500).send(err);
     }
@@ -29,7 +29,7 @@ async function signIn(req, res) {
             return item.email === email && item.password === password;
         });
         if(user) {
-            jwt.sign({email, password}, keys.jwt.secretKey, {expiresIn: '1h'}, (err, token) =>{
+            jwt.sign({email, password}, keys.jwt.secretKey, {expiresIn: "1h"}, (err, token) =>{
                 if(!err) {
                     res.status(200).send({token});
                 } else {
