@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "title": "monitor",
+      "title": "salamander",
       "totalPages": 501,
       "rating": "5/10",
       "isbn": 650,
@@ -26,7 +26,7 @@
       "totalPages": 500,
       "rating": "8/10",
       "isbn": 720,
-      "publishedDate": "21/05/1990",
+      "publishedDate": "21/05/1980",
       "authorId": 3,
       "publisherId": 3
     },
@@ -36,17 +36,17 @@
       "totalPages": 500,
       "rating": "8/10",
       "isbn": 720,
-      "publishedDate": "21/05/1990",
+      "publishedDate": "21/05/1988",
       "authorId": 4,
       "publisherId": 2
     },
     {
       "id": 5,
-      "title": "salamander",
+      "title": "monitor",
       "totalPages": 500,
       "rating": "8/10",
       "isbn": 720,
-      "publishedDate": "21/05/1990",
+      "publishedDate": "21/05/2000",
       "authorId": 2,
       "publisherId": 3
     }
