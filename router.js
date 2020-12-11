@@ -33,16 +33,8 @@ function verifyToken(req, res, next) {
 router.post('/signin', userController.signIn);
 router.post('/signup', userController.signUp);
 router.get('/:category', libraryController.getAll);
-// router.get('/author', libraryController.getAll);
-// router.get('/publisher', libraryController.getAll);
 router.get('/:category/:id', libraryController.getById);
-// router.get('/author/:id', libraryController.getById);
-// router.get('/publisher/:id', libraryController.getById);
 router.post('/:category', verifyToken, libraryController.addItem);
-// router.post('/publisher', verifyToken, libraryController.addItem);
-// router.post('/book', verifyToken, libraryController.addItem);
 router.delete('/:category/:id', verifyToken, libraryController.deleteItem);
-// router.delete('/publisher/:id', verifyToken, libraryController.deleteItem);
-// router.delete('/book/:id', verifyToken, libraryController.deleteItem);
 
 module.exports = router;

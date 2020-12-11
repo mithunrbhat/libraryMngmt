@@ -25,6 +25,7 @@ function thirdSorting(a, b, arr) {
         return result;
     } else {
         console.log('Ran out of sorting variables');
+        return result;
     }
 }
 
@@ -52,8 +53,10 @@ function secondSorting(a, b, arr) {
     if(result !== 0) {
         return result;
     } else {
-        let thirdResult = thirdSorting(a, b, arr);
-        return thirdResult;
+        if (arr[2] !== undefined) {
+            let thirdResult = thirdSorting(a, b, arr);
+            return thirdResult;
+        } else return result;
     }
 }
 
@@ -79,17 +82,30 @@ function firstSorting(obj, arr) {
         if(result !== 0) {
             return result;
         } else {
-            let secondResult = secondSorting(a, b, arr);
-            return secondResult;
+            if (arr[1] !== undefined) {
+                let secondResult = secondSorting(a, b, arr);
+                return secondResult;
+            } else return result;
         }
     });
     return obj;
 }
 
-function displayBooks(queryStrArr) {
-    // let [sorting, ele] = queryStrArr[0];
+function searchingFunc(obj, str) {
+    obj = obj.filter(item => {
+        return item.title.includes(str)
+    });
+    return obj;
+}
+
+function displayBooks(queryStrArr, searchStr) {
     let dataObj = objGiver.returnObj('book').map(obj => displayBook(obj));
-    dataObj = firstSorting(dataObj, queryStrArr)
+    if (queryStrArr[0] !== undefined) {
+        dataObj = firstSorting(dataObj, queryStrArr);
+    }
+    if(searchStr !== undefined) {
+        dataObj = searchingFunc(dataObj, searchStr);
+    }
     return dataObj;
 }
 
