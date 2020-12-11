@@ -42,12 +42,12 @@
     },
     {
       "id": 5,
-      "title": "monitor",
-      "totalPages": 501,
-      "rating": "5/10",
-      "isbn": 650,
-      "publishedDate": "29/02/2000",
-      "authorId": 4,
+      "title": "salamander",
+      "totalPages": 500,
+      "rating": "8/10",
+      "isbn": 720,
+      "publishedDate": "21/05/1990",
+      "authorId": 2,
       "publisherId": 3
     }
   ],

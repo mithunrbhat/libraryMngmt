@@ -2,27 +2,20 @@ const url = require('url');
 const sugerDisplay = require('../utils/sugerCoatJson');
 
 const fileRW = require('../utils/fileReadWrite');
+const objGiver = require('../utils/objGiver');
 
-let dataObj = {};
 const filePath = 'mock.json';
-
-(async function() {
-    let jsonData = await fileRW.readFromFile(filePath);
-    dataObj = JSON.parse(jsonData);
-})();
 
 async function getAll(req, res) {
     try {
-        // let jsonData = await fileRW.readFromFile();
-        // dataObj = JSON.parse(jsonData);
         let urlArr = req.url.split('/', 2);
         switch(urlArr[1]) {
             case 'book':
-                let result = sugerDisplay.displayBooks(dataObj, urlArr[1]);
+                let result = sugerDisplay.displayBooks();
                 res.json(result);
                 break;
             case 'author':
-            case 'publisher': res.json(dataObj[urlArr[1]]);
+            case 'publisher': res.json(objGiver.returnObj(urlArr[1]));
         }
     } catch (error) {
         console.error(error);
@@ -31,24 +24,18 @@ async function getAll(req, res) {
 
 async function getById(req, res) {
     try {
-        // let jsonData = await fileRW.readFromFile();
-        // dataObj = JSON.parse(jsonData);
-        var found = false;
         let urlArr = req.url.split('/', 2);
-        dataObj[urlArr[1]].forEach(element => {
-            if(parseInt(element.id) === parseInt(req.params.id)) {
-                found = true;
-                switch(urlArr[1]) {
-                    case 'book':
-                        let result = sugerDisplay.displayBook(element, dataObj);
-                        res.json(result);
-                        break;
-                    case 'author':
-                    case 'publisher': res.json(element);
-                }
+        let found = objGiver.returnObj(urlArr[1]).find(arrObj => parseInt(arrObj.id) === parseInt(req.params.id));
+        if(found) {
+            switch(urlArr[1]) {
+                case 'book':
+                    let result = sugerDisplay.displayBook(found);
+                    res.json(result);
+                    break;
+                case 'author':
+                case 'publisher': res.json(found);
             }
-        });  
-        if(!found) {res.json({message: `${urlArr[1]} with the ID: ${req.params.id} is not found`})};
+        } else {res.json({message: `${urlArr[1]} with the ID: ${req.params.id} is not found`})};
     } catch (error) {
         console.error(error);
     }
@@ -57,6 +44,7 @@ async function getById(req, res) {
 async function addItem(req, res) {
     try {
         let urlArr = req.url.split('/', 2);
+        let dataObj = objGiver.returnObjs();
         dataObj[urlArr[1]].push(req.body);
         await fileRW.writeIntoFile(filePath, dataObj, req, res, urlArr[1]);
     } catch (error) {
@@ -66,9 +54,8 @@ async function addItem(req, res) {
 
 async function deleteItem(req, res) {
     try {
-        // let jsonData = await fileRW.readFromFile();
-        // dataObj = JSON.parse(jsonData);
         let urlArr = req.url.split('/', 2);
+        let dataObj = objGiver.returnObjs();
         dataObj[urlArr[1]] = dataObj[urlArr[1]].filter((element) => {
             return parseInt(element.id) !== parseInt(req.params.id)
         });

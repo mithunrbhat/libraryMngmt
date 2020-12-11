@@ -21,7 +21,7 @@ function writeIntoFile(writeFilePath, dataToWrite, req, res, item) {
                     else msg = `${item} is added to the library`;
                 }
                 else if(req.method == 'DELETE') msg = `${item} with ID: ${req.params.id} is deleted successfully `
-                resolve(res.json({mesage: msg}));
+                resolve(res.json({message: msg}));
             }
         })
     })
