@@ -17,7 +17,7 @@
       "rating": "5/10",
       "isbn": 650,
       "publishedDate": "29/02/2000",
-      "authorId": 2,
+      "authorId": 1,
       "publisherId": 1
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "id": 2,
-      "name": "David Buccher",
+      "name": "Bill Murry",
       "email": "archem@assilum.com",
       "dob": "02/01/1998"
     },
